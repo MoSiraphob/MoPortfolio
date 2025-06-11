@@ -364,8 +364,8 @@ margin-bottom: 0.2rem;
 }
 
 .skill-block:hover {
-  background: #292929;
-  box-shadow: 0 4px 16px #00000040;
+  background: #d5131352;
+  box-shadow: 0 4px 16px #ff0000;
 }
 
 .skill-icon {
