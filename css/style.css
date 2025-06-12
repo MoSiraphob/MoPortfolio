@@ -439,6 +439,13 @@ margin-bottom: 0.2rem;
   background: #222;
 }
 
+.award-carousel-hint {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #bbbbbb;
+  margin-top: 0.5rem;
+}
+
 /* Responsive */ /*Ipad mini 768px*/
 @media (max-width: 768px) {
   .sidebar {
