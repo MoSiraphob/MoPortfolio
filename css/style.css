@@ -338,8 +338,9 @@ margin-bottom: 0.2rem;
 }
 
 .skills-section h3 {
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 1.5rem;
+  margin-top: 1rem;
   font-weight: 600;
   color: #bbbbbb; /* Match color to .role in profile section */
   text-align: left;
@@ -489,6 +490,7 @@ margin-bottom: 0.2rem;
 
   .skills-section h3 {
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
+    margin-top: 1rem;
   }
 }
