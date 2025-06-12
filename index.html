@@ -251,8 +251,58 @@
           </div>
         </div>
       </div>
+      <!-- Award Section: Place this below the Soft Skills section, inside the about section -->
+      <div class="award-section">
+        <h2>Awards</h2>
+        <div class="award-content">
+          <div class="award-details">
+            <h4>ZOOM MIXING CONTEST SEASON 2 </h4>
+            <p><strong>Place:</strong> 2nd Place</p>
+            <p><strong>Year:</strong> 2022</p>
+            <p>
+              It was a great experience to compete in the <strong>Fuzion Zoom Mixing Contest 2022</strong>, 
+              an individual mixing challenge put on by Fuzion Far East
+              Earning second place felt particularly rewarding, 
+              as my work was evaluated by experienced sound engineering professionals. 
+              This result highlights my technical skills and dedication to 
+              producing top-notch audio with the ZOOM Livetrak Series.
+            </p>
+            <!-- Add more awards by repeating the block above -->
+          </div>
+          <div id="awardCarousel" class="carousel slide award-carousel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="images/zoom1.png" class="d-block w-100 award-img award-img-clickable" alt="Award 1" data-full="images/zoom1.png">
+              </div>
+              <div class="carousel-item">
+                <img src="images/zoom2.jpg" class="d-block w-100 award-img award-img-clickable" alt="Award 2" data-full="images/zoom2.jpg">
+              </div>
+              <div class="carousel-item">
+                <img src="images/zoom3.png" class="d-block w-100 award-img award-img-clickable" alt="Award 2" data-full="images/zoom3.png">
+              </div>
+              <!-- Add more carousel-item blocks for more award images -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#awardCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#awardCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
   </div> 
+  <!-- Award Image Modal -->
+  <div class="modal fade" id="awardImageModal" tabindex="-1" aria-labelledby="awardImageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content" style="background: transparent; border: none; box-shadow: none;">
+        <div class="modal-body p-0">
+          <img id="awardModalImg" src="" alt="Award Fullsize" class="img-fluid rounded" style="width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Bootstrap JS (for dropdowns, etc.) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
   <!-- jQuery (for age calculation) -->

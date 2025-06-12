@@ -15,3 +15,13 @@ function calculateAge(birthDate) {
       ageSpan.textContent = calculateAge('2003-10-30'); // <-- Set your birthdate here
     }
   });
+  
+  // Award image click to show modal
+  document.querySelectorAll('.award-img-clickable').forEach(function(img) {
+    img.addEventListener('click', function() {
+      var src = img.getAttribute('data-full');
+      document.getElementById('awardModalImg').src = src;
+      var modal = new bootstrap.Modal(document.getElementById('awardImageModal'));
+      modal.show();
+    });
+  });
