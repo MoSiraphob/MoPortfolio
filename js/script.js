@@ -25,3 +25,13 @@ function calculateAge(birthDate) {
       modal.show();
     });
   });
+  
+  // Film image click to show modal
+  document.querySelectorAll('.film-img-clickable').forEach(function(img) {
+    img.addEventListener('click', function() {
+      var src = img.getAttribute('data-full');
+      document.getElementById('filmModalImg').src = src;
+      var modal = new bootstrap.Modal(document.getElementById('filmImageModal'));
+      modal.show();
+    });
+  });

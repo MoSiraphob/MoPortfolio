@@ -419,6 +419,18 @@ margin-bottom: 0.2rem;
   color: #ff0000;
 }
 
+.award-details h4 a {
+  color: #ff0000;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.award-details h4 a:hover,
+.award-details h4 a:focus {
+  color: #2196f3;
+  text-decoration: none;
+}
+
 .award-details p {
   font-size: 22px;
   color: #f2f0f0;
@@ -444,6 +456,135 @@ margin-bottom: 0.2rem;
   font-size: 0.95rem;
   color: #bbbbbb;
   margin-top: 0.5rem;
+}
+
+/* Film Section */
+.film-section {
+  background: #1a1a1a;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px #00000030;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  width: 100%;
+}
+
+.film-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center; /* Center media with text */
+  flex-wrap: wrap;
+}
+
+.film-details {
+  flex: 1 1 320px;
+  color: #fff;
+  align-self: center; /* Vertically center text with media */
+}
+
+.film-media {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center;    /* Center horizontally */
+  justify-content: center;
+  min-width: 250px;
+}
+
+.film-details h2 {
+  color: #ff0000;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.film-details p {
+  font-size: 22px; /* Reduced text size */
+  color: #dddddd;
+  margin-bottom: 0.4rem;
+}
+
+.film-media iframe,
+.film-media .soundcloud-embed,
+.film-media .spotify-embed {
+  border-radius: 16px;
+  width: 100%;
+  max-width: 350px;
+  min-height: 200px;
+  background: #222;
+}
+
+.film-title {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.film-project-title {
+  color: #ff0000;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.film-links {
+  display: flex;
+  justify-content: left;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.film-link-icon {
+  font-size: 2.2rem;
+  color: #ff5500;
+  transition: color 0.2s;
+}
+
+.film-link-icon:hover {
+  color: #1db954; /* Spotify green on hover for both */
+}
+.film-link-icon .fa-spotify {
+  color: #1db954;
+}
+.film-link-icon .fa-soundcloud {
+  color: #ff5500;
+}
+
+/* Add to your style.css for the film carousel */
+.film-carousel {
+  max-width: 600px;
+  min-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.film-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  background: #222;
+}
+
+@media (max-width: 768px) {
+  .film-carousel {
+    max-width: 100vw;
+  }
+  .film-img {
+    height: 200px;
+    border-radius: 8px;
+  }
+}
+
+/* Section Divider */
+.section-divider {
+  border: none;
+  border-top: 2px solid #333;
+  margin: 3rem 0 2rem 0;
+  width: 100%;
+  max-width: 900px;
+  opacity: 0.6;
 }
 
 /* Responsive */ /*Ipad mini 768px*/
@@ -579,6 +720,31 @@ margin-bottom: 0.2rem;
     height: 220px;
     border-radius: 16px;
     display: block;
+  }
+
+  .award-section h2,
+  .film-title {
+    text-align: center;
+  }
+
+  .film-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .film-media {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
+  .film-media iframe,
+  .film-media .soundcloud-embed,
+  .film-media .spotify-embed {
+    width: 100vw;
+    max-width: 100vw;
+    min-height: 220px;
+    border-radius: 0;
+    margin-left: -16px;
+    margin-right: -16px;
   }
 }
 
