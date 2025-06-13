@@ -734,6 +734,11 @@ margin-bottom: 0.2rem;
   .film-media {
     margin-top: 1rem;
     justify-content: center;
+    height: 180px;
+    border-radius: 8px;
+    object-fit: contain;
+    width: 100%;
+    background: #222;
   }
 
   .film-media iframe,
