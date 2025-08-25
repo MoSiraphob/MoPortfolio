@@ -35,3 +35,27 @@ function calculateAge(birthDate) {
       modal.show();
     });
   });
+  
+  // Profile image click to show modal
+  document.querySelectorAll('.profile-img-clickable').forEach(function(img) {
+    img.addEventListener('click', function() {
+      var src = img.getAttribute('data-full');
+      document.getElementById('profileModalImg').src = src;
+      var modal = new bootstrap.Modal(document.getElementById('profileImageModal'));
+      modal.show();
+    });
+  });
+  
+  // Mobile nav menu toggle
+  document.getElementById('menuBtn').addEventListener('click', function() {
+    document.getElementById('mobileNav').style.display = 'flex';
+  });
+  document.getElementById('closeNav').addEventListener('click', function() {
+    document.getElementById('mobileNav').style.display = 'none';
+  });
+  // Optional: close menu when a nav link is clicked
+  document.querySelectorAll('.mobile-nav-list .nav-item').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('mobileNav').style.display = 'none';
+    });
+  });

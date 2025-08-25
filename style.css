@@ -20,13 +20,16 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 140px;
+  width: 160px;
   height: 100vh;
-  background-color: #222;
+  background: #222;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 1rem;
+  padding-top: 2rem;
+  box-shadow: 2px 0 16px #00000030;
+  z-index: 1001;
+  overflow-y: auto; /* Enable scroll if needed */
 }
 
 .sidebar .avatar {
@@ -72,32 +75,93 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
-  background-color: #111;
-  padding: 0.5rem;
-  text-align: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
+  z-index: 1002;
+  background: linear-gradient(90deg, #222 80%, #ff0000 100%);
+  padding: 0.5rem 0;
+  text-align: right;
+  box-shadow: 0 2px 8px #00000030;
 }
 
-.topbar .nav-item {
-  display: inline-block;
-  min-width: 20px; /* Adjust as needed */
-  flex: 1 1 auto;
-  color: white;
-  padding: 10px 0;
+.menu-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.menu-btn .material-symbols-outlined {
+  font-size: 2.2rem;
+  color: #fff;
+}
+
+/* Mobile Nav Overlay */
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: linear-gradient(180deg, #222 80%, #ff0000 100%);
+  z-index: 2000;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 3rem;
+  overflow-y: auto;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.mobile-nav-list .nav-item {
+  color: #fff;
+  font-size: 1.5rem;
   text-decoration: none;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  transition: background 0.2s, color 0.2s;
 }
 
-.topbar .nav-item:hover {
-  background-color: #ff0000;
+.mobile-nav-list .nav-item:hover {
+  background: #ff0000;
+  color: #fff;
+}
+
+.mobile-nav-list .material-symbols-outlined {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  cursor: pointer;
+  z-index: 2100;
 }
 
 /* Main content */
 .main {
-  margin-left: 140px; /* Match sidebar width */
+  margin-left: 160px; /* Match sidebar width */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -754,7 +818,7 @@ margin-bottom: 0.2rem;
 }
 
 /* Responsive for Resume Buttons */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .resume-buttons {
     flex-direction: column;
     gap: 0.75rem;
@@ -769,7 +833,7 @@ margin-bottom: 0.2rem;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .contact-title {
     text-align: center;
   }
@@ -777,14 +841,14 @@ margin-bottom: 0.2rem;
     grid-template-columns: 1fr 1fr;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .contact-grid {
     grid-template-columns: 1fr;
   }
 }
 
 /* Responsive */ /*Ipad mini 768px*/
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .sidebar {
     display: none;
   }
@@ -800,7 +864,7 @@ margin-bottom: 0.2rem;
 }
 
 /* Phone Profile section styles */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .profile-container {
     flex-direction: column;
     width: 100%;
@@ -823,7 +887,7 @@ margin-bottom: 0.2rem;
   }
 }
 /* About section styles */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .about {
     padding: 1rem;
     margin-top: 10px;
@@ -1036,13 +1100,106 @@ margin-bottom: 0.2rem;
   min-height: 200px;
   background: #222;
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .side-project-content {
     flex-direction: column;
     align-items: stretch;
   }
   .side-project-media {
     margin-top: 1rem;
+  }
+}
+
+/* Only mobile topbar logo centered and menu button */
+@media (max-width: 1000px) {
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #222 80%, #ff0000 100%);
+    height: 60px;
+    box-shadow: 0 2px 8px #00000030;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1002;
+    padding: 0;
+  }
+  .topbar-logo-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 60px;
+  }
+  .topbar-logo-center img {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: #fff;
+    display: block;
+  }
+  .menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2.2rem;
+    padding: 0;
+    margin-right: 12px;
+    margin-left: 8px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+}
+@media (max-width: 1000px) {
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: linear-gradient(90deg, #222 80%, #ff0000 100%);
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1002;
+    box-shadow: 0 2px 8px #00000030;
+    padding: 0;
+  }
+  .topbar-logo-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+  }
+  .topbar-logo-center img {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: #fff;
+    display: block;
+  }
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2.2rem;
+    margin-left: 8px;
+    height: 44px;
+    z-index: 1;
   }
 }
 

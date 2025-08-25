@@ -27,42 +27,41 @@
 </head>
 <body>
 
-  <!-- Sidebar for desktop -->
+  <!-- Sidebar for desktop (unchanged, but add overflow for scroll) -->
   <nav class="sidebar">
-    <a href="#home" class="nav-item">
-      <span class="material-symbols-outlined">home</span>
-      <span>HOME</span>
-    </a>
-    <a href="#about" class="nav-item">
-      <span class="material-symbols-outlined">info</span>
-      <span>ABOUT ME</span>
-    </a>
-    <a href="#film" class="nav-item">
-      <span class="material-symbols-outlined">video_library</span>
-      <span>FILM</span>
-    </a>
-    <a href="#music" class="nav-item">
-      <span class="material-symbols-outlined">graphic_eq</span>
-      <span>MUSIC</span>
-    </a>
-    <a href="#side-project" class="nav-item">
-      <span class="material-symbols-outlined">construction</span>
-      <span>SIDE PROJECT</span>
-    </a>
-    <a href="#contact" class="nav-item">
-      <span class="material-symbols-outlined">contact_page</span>
-      <span>CONTACT</span>
-    </a>
+    <div class="sidebar-logo" style="margin-bottom: 2rem;">
+      <img src="images/logo.png" alt="Logo" style="width:60px; border-radius:16px;">
+    </div>
+    <a href="#home" class="nav-item"><span class="material-symbols-outlined">home</span><span>Home</span></a>
+    <a href="#about" class="nav-item"><span class="material-symbols-outlined">info</span><span>About Me</span></a>
+    <a href="#film" class="nav-item"><span class="material-symbols-outlined">video_library</span><span>Film</span></a>
+    <a href="#music" class="nav-item"><span class="material-symbols-outlined">graphic_eq</span><span>Music</span></a>
+    <a href="#side-project" class="nav-item"><span class="material-symbols-outlined">construction</span><span>Side Project</span></a>
+    <a href="#contact" class="nav-item"><span class="material-symbols-outlined">contact_page</span><span>Contact</span></a>
   </nav>
 
-  <!-- Topbar for mobile -->
+  <!-- Topbar for mobile only: logo centered and menu button -->
   <div class="topbar">
-    <a href="#home" class="nav-item">HOME</a>
-    <a href="#about" class="nav-item">ABOUT ME</a>
-    <a href="#film" class="nav-item">FILM</a>
-    <a href="#music" class="nav-item">MUSIC</a>
-    <a href="#side-project" class="nav-item">SIDE PROJECT</a>
-    <a href="#contact" class="nav-item">CONTACT</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <div class="topbar-logo-center">
+      <img src="images/logo.png" alt="Logo">
+    </div>
+  </div>
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="close-btn" id="closeNav" aria-label="Close menu">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <nav class="mobile-nav-list">
+      <a href="#home" class="nav-item"><span class="material-symbols-outlined">home</span>Home</a>
+      <a href="#about" class="nav-item"><span class="material-symbols-outlined">info</span>About Me</a>
+      <a href="#film" class="nav-item"><span class="material-symbols-outlined">video_library</span>Film</a>
+      <a href="#music" class="nav-item"><span class="material-symbols-outlined">graphic_eq</span>Music</a>
+      <a href="#side-project" class="nav-item"><span class="material-symbols-outlined">construction</span>Side Project</a>
+      <a href="#contact" class="nav-item"><span class="material-symbols-outlined">contact_page</span>Contact</a>
+    </nav>
   </div>
 
   <!-- Main content -->
@@ -74,16 +73,16 @@
         <div id="profileCarousel" class="carousel slide profile-carousel" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="images/me4.jpg" class="profile-pic d-block" alt="Profile 1">
+              <img src="images/me4.jpg" class="profile-pic d-block profile-img-clickable" alt="Profile 1" data-full="images/me4.jpg">
             </div>
             <div class="carousel-item">
-              <img src="images/me1.jpg" class="profile-pic d-block" alt="Profile 2">
+              <img src="images/me1.jpg" class="profile-pic d-block profile-img-clickable" alt="Profile 2" data-full="images/me1.jpg">
             </div>
             <div class="carousel-item">
-              <img src="images/me2.jpg" class="profile-pic d-block" alt="Profile 3">
+              <img src="images/me2.jpg" class="profile-pic d-block profile-img-clickable" alt="Profile 3" data-full="images/me2.jpg">
             </div>
             <div class="carousel-item">
-              <img src="images/me3.jpg" class="profile-pic d-block" alt="Profile 4">
+              <img src="images/me3.jpg" class="profile-pic d-block profile-img-clickable" alt="Profile 4" data-full="images/me3.jpg">
             </div>
             <!-- Add more carousel-item blocks for more images -->
           </div>
@@ -718,5 +717,15 @@
       </a>
     </div>
   </section>
+  <!-- Profile Image Modal: Add this modal for profile image full size view -->
+  <div class="modal fade" id="profileImageModal" tabindex="-1" aria-labelledby="profileImageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content" style="background: transparent; border: none; box-shadow: none;">
+        <div class="modal-body p-0">
+          <img id="profileModalImg" src="" alt="Profile Fullsize" class="img-fluid rounded" style="width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
