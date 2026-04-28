@@ -527,6 +527,23 @@ margin-bottom: 0.2rem;
   margin-top: 0.5rem;
 }
 
+.award-links {
+  display: flex;
+  justify-content: left;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.award-link-icon {
+  font-size: 2.2rem;
+  color: #ff5500;
+  transition: color 0.2s;
+}
+
+.award-link-icon:hover {
+  color: #1db954;
+}
+
 /* Film Section */
 .film-section {
   background: #1a1a1a;
@@ -695,6 +712,8 @@ margin-bottom: 0.2rem;
 .music-link-icon .fa-spotify { color: #1db954; }
 .music-link-icon .fa-youtube { color: #ff0000; }
 .music-link-icon .fa-soundcloud { color: #ff5500; }
+.music-link-icon .fa-instagram { color: #e1306c; }
+.music-link-icon .fa-facebook { color: #1877f2; }
 
 .music-link-icon:hover {
   color: #2196f3;
